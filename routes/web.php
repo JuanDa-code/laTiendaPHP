@@ -89,7 +89,7 @@ Route::get('/Paises', function () {
         "Colombia" => [
             "CAPITAL" => "Bogotá",
             "MONEDA" => "Peso",
-            "POBLACIÓN" => 50.88,
+            "POBLACION" => 50.88,
             "CIUDADES" => [
                 "Medelín",
                 "Barranquilla",
@@ -99,7 +99,7 @@ Route::get('/Paises', function () {
         "Peru" => [
             "CAPITAL" => "Lima",
             "MONEDA" => "Sol",
-            "POBLACIÓN" => 32.97,
+            "POBLACION" => 32.97,
             "CIUDADES" => [
                 "Cusco",
                 "Arequipa",
@@ -109,7 +109,7 @@ Route::get('/Paises', function () {
         "Paraguay" => [
             "CAPITAL" => "Asunción",
             "MONEDA" => "Guaraní paraguayo",
-            "POBLACIÓN" => 7.13,
+            "POBLACION" => 7.13,
             "CIUDADES" => [
                 "Ciudad del Este",
                 "Encarnación",
@@ -119,7 +119,7 @@ Route::get('/Paises', function () {
         "Ecuador" => [
             "CAPITAL" => "Quito",
             "MONEDA" => "Dólar Estadounidense",
-            "POBLACIÓN" => 17.64,
+            "POBLACION" => 17.64,
             "CIUDADES" => [
                 "Guayaquil",
                 "Cuenca",
@@ -129,7 +129,7 @@ Route::get('/Paises', function () {
         "Argentina" => [
             "CAPITAL" => "Buenos Aires",
             "MONEDA" => "Peso Argentino",
-            "POBLACIÓN" => 45.38,
+            "POBLACION" => 45.38,
             "CIUDADES" => [
                 "Rosario",
                 "Santa Fe",
@@ -140,5 +140,5 @@ Route::get('/Paises', function () {
 
     // Mostrar vista de paises
 
-    return view('paises')->with('vivideros', $paises);
+    return view('paises')->with('paises', $paises);
 });

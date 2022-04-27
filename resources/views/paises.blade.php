@@ -14,17 +14,24 @@
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Capital</th>
-                    <th scope="col">Moneda</th>
-                    <th scope="col">Nombre</th>
+                    <th scope="col" >Nombre</th>
+                    <th scope="col" >Capital</th>
+                    <th scope="col" >Moneda</th>
+                    <th scope="col" >Población</th>
+                    <th scope="col" >Ciudades</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($vivideros as $nombre => $pais)
+                @foreach($paises as $nombre => $pais)
                 <tr>
-                    <td>{{ $nombre }}</td>
-                </tr>
+                    <td rowspan='{{ count($pais["CIUDADES"]) }}' >{{ $nombre }}</td>
+                    <td rowspan='{{ count($pais["CIUDADES"]) }}' >{{ $pais["CAPITAL"] }}</td>
+                    <td rowspan='{{ count($pais["CIUDADES"]) }}' >{{ $pais["MONEDA"] }}</td>
+                    <td rowspan='{{ count($pais["CIUDADES"]) }}' >{{ $pais["POBLACION"] }} </td>
+                    @foreach($pais["CIUDADES"] as $ciudades )
+                        <td>{{ $ciudades }}</td>
+                        </tr>
+                    @endforeach
                 @endforeach
             </tbody>
         </table>
