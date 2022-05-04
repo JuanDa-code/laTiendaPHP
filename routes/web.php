@@ -24,10 +24,10 @@ Route::get('/Home', function () {
     echo "Hola le dijo la araña a la mosca"; 
 });
 
-// Ruta de prueba
+// Ruta de Producto
 
-Route::get('/Home', function () {
-    echo "<h1>Hola ficha 2236903</h1>";
+Route::get('/Producto/Crear', function () {
+    return view('producto.create');
 });
 
 Route::get('/Arreglo', function() {
