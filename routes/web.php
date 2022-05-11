@@ -143,6 +143,4 @@ Route::get('/Paises', function () {
  * 
  */
 
-
-
  Route::resource('productos', ProductoController::class);
