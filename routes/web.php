@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +23,6 @@ Route::get('/', function () {
 
 Route::get('/Home', function () { 
     echo "Hola le dijo la araña a la mosca"; 
-});
-
-// Ruta de Producto
-
-Route::get('/Producto/Crear', function () {
-    return view('producto.create');
 });
 
 Route::get('/Arreglo', function() {
@@ -142,3 +137,12 @@ Route::get('/Paises', function () {
 
     return view('paises')->with('paises', $paises);
 });
+
+/**
+ * Rutas REST Producto
+ * 
+ */
+
+
+
+ Route::resource('productos', ProductoController::class);

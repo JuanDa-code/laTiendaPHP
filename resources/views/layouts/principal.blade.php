@@ -8,18 +8,26 @@
     <title>La Tienda de PHP</title>
 </head>
 <body>
-    <nav>
+    <nav class="green darken-1">
         <div class="nav-wrapper">
-        <a href="#!" class="brand-logo center">Logo</a>
+        <a href="#!" class="brand-logo center">LA TIENDA PHP</a>
         <ul class="left hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li class="active"><a href="collapsible.html">JavaScript</a></li>
+            <li><a href="badges.html">Productos</a></li>
+            <li class="active"><a href="collapsible.html">Pedidos</a></li>
         </ul>
         </div>
     </nav>
 
-    @yield('contenido')
+    <div class="container">
+        @yield('contenido')
+    </div>
 
+<script src="{{ asset('materialize/js/materialize.js') }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, []);
+    });
+</script>
 </body>
 </html>
