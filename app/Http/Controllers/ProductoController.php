@@ -6,6 +6,8 @@ use App\Models\Producto;
 use App\Models\Marca;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreProductRequest;
+use Illuminate\Support\Facades\Validator;
 
 class ProductoController extends Controller
 {
@@ -37,7 +39,7 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
         $p = new Producto();
         $p->nombre = $request->nombre;
@@ -46,7 +48,11 @@ class ProductoController extends Controller
         $p->marca_id = $request->marca;
         $p->categoria_id = $request->categoria;
         $p->save();
-        echo "Producto registrado.";
+        
+        //Redireccionar a una ruta disponible.
+
+        return redirect('productos/create')->with('mensaje', "Producto registrado exitosamente.");
+        
     }
 
     /**
