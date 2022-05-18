@@ -27,7 +27,7 @@ class StoreProductRequest extends FormRequest
         return [
             "nombre" => 'required|alpha',
             "desc" => 'required|max:100',
-            "precio" => 'required|max:10000|numeric',
+            "precio" => 'required|numeric',
             "categoria" => 'required',
             "marca" => 'required'
         ];
