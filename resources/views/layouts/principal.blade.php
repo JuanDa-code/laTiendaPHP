@@ -12,8 +12,8 @@
         <div class="nav-wrapper">
         <a href="#!" class="brand-logo center">LA TIENDA PHP</a>
         <ul class="left hide-on-med-and-down">
-            <li><a href="badges.html">Productos</a></li>
-            <li class="active"><a href="collapsible.html">Pedidos</a></li>
+            <li><a href="{{ url ('productos/create') }}">Productos</a></li>
+            <li class="active"><a href="{{ url ('productos/') }}">Catálogo</a></li>
         </ul>
         </div>
     </nav>
