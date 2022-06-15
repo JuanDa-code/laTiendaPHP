@@ -11,30 +11,37 @@
 
         <div class="row">
             <div class="col s12">
-                <table>
+                <table class="centered highlight responsive-table">
                     <thead>
                         <tr>
                             <th>Producto</th>
                             <th>Cantidad</th>
-                            <th>Subtotal</th>
+                            <th>Precio</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach(session('cart') as $index => $producto)
-                        <tr>
-                            <td>{{ var_dump($producto) }}</td>
-                        </tr>
-                        @endforeach
+                        @if (!session('cart'))
+                            <tr>
+                                <td>No hay items en el carrito.</td>
+                            </tr>   
+                        @else
+                            @foreach(session('cart') as $index => $producto)
+                                <tr>
+                                    <td>{{ $producto[0]['nombre_prod'] }}</td>
+                                    <td>{{ $producto[0]['cantidad'] }}</td>
+                                    <td>{{ $producto[0]['precio'] }}</td>
+                                </tr>
+                            @endforeach
+                        @endif
                     </tbody>
                 </table>
             </div>
 
           <div class="row">
-              <form action="{{ route('cart.destroy' ,1) }}" method="POST">
+              <form action="{{ route('cart.destroy', 1) }}" method="POST">
                 @method('DELETE')
                 @csrf
-
-                    <button type="submit">
+                    <button class="btn waves-effect waves-light" type="submit">
                         Vaciar contenido
                     </button>
               </form>

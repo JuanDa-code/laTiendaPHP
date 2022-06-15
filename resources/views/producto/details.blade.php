@@ -17,14 +17,6 @@
                     <img src="{{ asset('img/producto/'.$producto->imagen) }}" width='500px' height='400px'>
                     <span class="card-title black">{{ $producto->nombre }}</span>
                 </div>
-                <!-- <div class="card-tabs">
-                    <ul class="tabs tabs-fixed-width">
-                        <li class="tab"><a href="#test1"><strong>Descripción</strong></a></li>
-                        <li class="tab"><a href="#test2"><strong>Precio</strong></a></li>
-                        <li class="tab"><a href="#test3"><strong>Marca</strong></a></li>
-                        <li class="tab"><a href="#test4"><strong>Categoría</strong></a></li>
-                    </ul>
-                </div> -->
                 <div class="card-content grey lighten-4">
                     <div id="test1"><strong>Descripción :</strong> {{ $producto->descripcion }}</div>
                     <div id="test2"><strong>Precio :</strong> {{ $producto->precio }}</div>
@@ -42,6 +34,7 @@
                     <h3>Añadir al carrito</h3>
                 </div>
                 <input type="hidden" name="prod_id" value="{{ $producto->id }}">
+                <input type="hidden" name="precio" value="{{ $producto->precio }}">
                 <div class="row">
                     <div class="col s4 input-field">
                         <select name="cantidad" id="cantidad">

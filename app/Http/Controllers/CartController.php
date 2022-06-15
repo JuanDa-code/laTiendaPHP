@@ -14,13 +14,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        if(!session('cart')){
-            echo "No hay items en el carrito";
-        }
-        else{
-            return view('cart.index');
-        }
-        
+        return view('cart.index');
     }
 
     /**
@@ -44,7 +38,8 @@ class CartController extends Controller
         // 1. Persistir los datos en una sesión.
         $producto = [[
             "prod_id" => $request->prod_id,
-            "cantidad" => $request->cantidad, 
+            "cantidad" => $request->cantidad,
+            "precio" => $request->precio,
             "nombre_prod" => Producto::find($request->prod_id)->nombre
         ]];
 
@@ -53,7 +48,7 @@ class CartController extends Controller
 
             $aux[] = $producto;
 
-            session(['cart' => $producto]);
+            session(['cart' => $aux]);
         } else {
 
             // Extraer los datos del carrito de la variable se sesión.
@@ -72,8 +67,6 @@ class CartController extends Controller
         // Redirección al catálogo de productos con mensaje de éxito.
 
         return redirect('productos')->with("mensajito", "Producto añadido al carrito con éxito.");
-
-        // var_dump($producto);
     }
 
     /**
@@ -119,5 +112,6 @@ class CartController extends Controller
     public function destroy($id)
     {
         session()->forget('cart');
+        return redirect('cart');
     }
 }

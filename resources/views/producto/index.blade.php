@@ -10,7 +10,6 @@
         </div>
 
         @if(session('mensajito'))
-
         <div class="row">
           <div class="col s12 m12">
             <div class="card   cyan lighten-1">
@@ -21,7 +20,6 @@
             </div>
           </div>
         </div>
-
       @endif
 
         <div class="row">
